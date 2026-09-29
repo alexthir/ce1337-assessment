@@ -21,7 +21,7 @@ let time = 30
     clearInterval(timer)
 }
 }, 1000)}
-let question = prompt.question("Press 1 to run countdown")
-if (question==1){
+let questionc = prompt.question("Press 1 to run countdown")
+if (questionc==1){
 countdown()
 }
