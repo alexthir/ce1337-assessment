@@ -1,4 +1,5 @@
 const prompt = require("readline-sync")
+
 // Prompt for the players to enter their names
 let name1 = prompt.question("Player 1 please enter your name.")
 console.log("Welcome "+ name1)
@@ -10,43 +11,22 @@ console.log("Welcome to the quiz show "+ name1 +" and " + name2 +" For every que
 console.log("Each player gets 2 topics to answer from, with there being the 2 HARD topic questions at the end for extra points")
 console.log("You can choose one of these topics: -Tv -Geography -History -Music ");
 
+
+
 // Hear the rules
 let data = prompt.question("Would you like to be told the rules of the game?");
 
 if(data == "yes" || data == "Yes") {
-    console.log("For every correct answer your point score will increase by one. If the answer is not spelt correctly you will lose the point.You have thirty seconds to give an answer. If the timer runs out before you have given a correct answer,then the point is lost. Whichever player has the most points at the end wins!");
+    console.log("For every correct answer your point score will increase by one.");
+console.log("If the answer is not spelt correctly you will lose the point.")
+console.log("You have thirty seconds to give an answer.")
+console.log("If the timer runs out before you have given a correct answer,then the point is lost.")
+console.log("Whichever player has the most points at the end wins!")
 }else{
     console.log("Ok let's begin");
 }
 
 
-// Countdown for the player to answer within
-function countdown(){
-let time = 30 
-    const timer = setInterval(() =>{
-        if(time === 30){
-    console.log("You have 30 seconds to answer starting now")}
-        time--;
-         if(time === 20){
-    console.log("20 seconds left")}
-     if(time === 10){
-    console.log("10 seconds left")}
-    if(time === 3){
-    console.log("3")}
-     if(time === 2){
-    console.log("2")}
-     if(time === 1){
-    console.log("1")}
-   if(time === 0){
-    console.log("Your time is up!")
-    clearInterval(timer)
-}
-}, 1000)}
-// starting the countdown
-let cdstart = 0
-if (cdstart==1){
-countdown()
-}
 
 
 
@@ -326,9 +306,14 @@ for (let i =0; i<3; i++){
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
     console.log("4. " + randomQuestion.choices[3]);
-    let answer = prompt.question("Enter your answer: ");
+    var dateStart = new Date()
+    var answer = prompt.question("Enter your answer: ");
+    var difference = new Date() - dateStart; // time elapsed in milliseconds
+if (difference > 30000){
+    console.log("You didn't answer in time!")
+}
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer && difference < 30000){
         console.log("Correct!");
         totalPoints++;
     } else {
@@ -354,9 +339,14 @@ for (let i =0; i<3; i++){
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
     console.log("4. " + randomQuestion.choices[3]);
-    let answer = prompt.question("Enter your answer: ");
+     var dateStart = new Date()
+    var answer = prompt.question("Enter your answer: ");
+    var difference = new Date() - dateStart; // time elapsed in milliseconds
+if (difference > 30000){
+    console.log("You didn't answer in time!")
+}
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer && difference < 30000){
         console.log("Correct!");
         totalPoints++;
     } else {
@@ -381,11 +371,16 @@ for (let i =0; i<3; i++){
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
     console.log("4. " + randomQuestion.choices[3]);
-    let answer = prompt.question("Enter your answer: ");
+     var dateStart = new Date()
+    var answer = prompt.question("Enter your answer: ");
+    var difference = new Date() - dateStart; // time elapsed in milliseconds
+if (difference > 30000){
+    console.log("You didn't answer in time!")
+}
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer && difference < 30000){
         console.log("Correct!");
-        totalPoints2++;
+        totalPoints++;
     } else {
         console.log("Incorrect!");
     }
@@ -408,11 +403,16 @@ for (let i =0; i<3; i++){
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
     console.log("4. " + randomQuestion.choices[3]);
-    let answer = prompt.question("Enter your answer: ");
+    var dateStart = new Date()
+    var answer = prompt.question("Enter your answer: ");
+    var difference = new Date() - dateStart; // time elapsed in milliseconds
+if (difference > 30000){
+    console.log("You didn't answer in time!")
+}
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer && difference < 30000){
         console.log("Correct!");
-        totalPoints2++;
+        totalPoints++;
     } else {
         console.log("Incorrect!");
     }
@@ -433,11 +433,17 @@ for (let i =0; i<2; i++){
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
     console.log("4. " + randomQuestion.choices[3]);
-    let answer = prompt.question("Enter your answer: ");
+     var dateStart = new Date()
+    var answer = prompt.question("Enter your answer: ");
+    var difference = new Date() - dateStart; // time elapsed in milliseconds
+if (difference > 30000){
+    console.log("You didn't answer in time!")
+}
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer && difference < 30000){
         console.log("Correct!");
-        totalPoints2 = totalPoints + 2;
+        totalPoints++;
+        totalPoints = totalPoints + 2;
     } else {
         console.log("Incorrect!");
     }
@@ -453,9 +459,14 @@ for (let i =0; i<2; i++){
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
     console.log("4. " + randomQuestion.choices[3]);
-    let answer = prompt.question("Enter your answer: ");
+     var dateStart = new Date()
+    var answer = prompt.question("Enter your answer: ");
+    var difference = new Date() - dateStart; // time elapsed in milliseconds
+if (difference > 30000){
+    console.log("You didn't answer in time!")
+}
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer && difference < 30000){
         console.log("Correct!");
         totalPoints2 = totalPoints2 + 2;
     } else {
