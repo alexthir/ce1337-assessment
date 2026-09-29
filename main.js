@@ -1,5 +1,6 @@
 const prompt = require("readline-sync")
 
+function countdown(){
 let time = 30 
     const timer = setInterval(() =>{
         if(time === 30){
@@ -19,4 +20,8 @@ let time = 30
     console.log("Your time is up!")
     clearInterval(timer)
 }
-}, 1000)
+}, 1000)}
+let question = prompt.question("Press 1 to run countdown")
+if (question==1){
+countdown()
+}
