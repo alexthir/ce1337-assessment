@@ -1,5 +1,11 @@
 const prompt = require("readline-sync")
+// Prompt for the players to enter their names
+let name1 = prompt.question("Player 1 please enter your name.")
+console.log("Welcome "+ name1)
+let name2 = prompt.question("Player 2 please enter your name.")
 
+// Countdown for the player to answer within
+console.log("Welcome "+ name2)
 function countdown(){
 let time = 30 
     const timer = setInterval(() =>{
@@ -21,7 +27,9 @@ let time = 30
     clearInterval(timer)
 }
 }, 1000)}
-let questionc = prompt.question("Press 1 to run countdown")
-if (questionc==1){
+// starting the countdown
+let cdstart = prompt.question("Press 1 to run countdown")
+if (cdstart==1){
 countdown()
 }
+
