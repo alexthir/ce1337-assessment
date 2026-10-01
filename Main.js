@@ -281,7 +281,6 @@ while(rules != "yes" || rules !="Yes" || rules !="YES" || rules !="no" || rules 
     if(rules == "yes" || rules =="Yes" || rules =="YES"){
         console.log("=====RULES=====");
         console.log("1.For every correct answer your point score will increase by one, and hard questions give 2 points.\n2.You have thirty seconds to give an answer.\n3.If the timer runs out before you have given a correct answer,then the point is lost.\n4.When a topic is picked it cannot be picked again, even for the other player.\n6.Whichever player has the most points at the end wins!");
-        console.log("=====================================================");
         break;
         }else if(rules == "no" || rules =="No" || rules =="NO"){
             console.log("Let the game begin!");
@@ -296,14 +295,14 @@ console.log("You can choose one of these topics: -Tv -Geography -History -Music 
 // Asking Player 1 for their first topic
 let topic = prompt.question(name1 + " please choose a topic: ");
 
-// If Player 1 enters a topic that isnt valid then it will loop until the user picks a valid topic
-while(topic != "Tv" && topic != "Geography" && topic != "History" && topic != "Music"){
-    topic = prompt.question(name1 + " please choose a valid topic: ");
-}
-
 // Making it impossible to pick hard as their topic
 while(topic == "Hard"){
     topic = prompt.question("That topic is only for the end! Please choose another: ");
+}
+
+// If Player 1 enters a topic that isnt valid then it will loop until the user picks a valid topic
+while(topic != "Tv" && topic != "Geography" && topic != "History" && topic != "Music"){
+    topic = prompt.question(name1 + " please choose a valid topic: ");
 }
 
 // Asking Player 1 to answer random questions based on the topic they chose
@@ -327,20 +326,35 @@ for (let i =0; i<3; i++){
     questions[topic].splice(randomIndex, 1);
 }
 
+// ------------------------------
 // Asking Player 1 for their second topic
 let topic2 = prompt.question(name1 + " please choose a different topic: ");
-
-// If Player 1 enters a topic that isnt valid then it will loop until the user picks a valid topic
-while(topic2 != "Tv" && topic2 != "Geography" && topic2 != "History" && topic2 != "Music"){
-    topic2 = prompt.question(name1 + " please choose a valid topic: ");
-}
 
 // Making it impossible to pick hard as their topic
 while(topic2 == "Hard"){
     topic2 = prompt.question("That topic is only for the end! Please choose another: ");
 }
 
-// ------------------------------
+// If Player 1 enters a topic that isnt valid then it will loop until the user picks a valid topic
+while(topic2 != "Tv" && topic2 != "Geography" && topic2 != "History" && topic2 != "Music"){
+    topic2 = prompt.question(name1 + " please choose a valid topic: ");
+}
+
+// Showing the user what topics can be used
+questionAvailability = ["Tv", "Geography", "History", "Music"];
+
+// for(i=0;i<questionAvailability.length; 1++){
+//     if (topic == questionAvailability[i]){
+//         questionAvailability.splice(topic);
+//     }
+// }
+
+// let questionAvailability.splice(",") = availabilitySentence;
+// console.log("The topics that are available are: " + )
+
+// use the questionAvailability array then splice it, then concatenate it with the index of the array: so for thye first word it would be [0] then [1] etc..
+
+
 // Making the user pick another topic if they pick a topic they have already done
 while(topic2 == topic){ 
     topic2 = prompt.question("Please choose a another topic that isn't " + topic + " : ");
@@ -373,14 +387,14 @@ console.log("=====================================================")
 console.log(name2 + " It is your turn now!")
 let topic3 = prompt.question(name2 + " please choose a topic: ");
 
-// If Player 2 enters a topic that isnt valid then it will loop until the user picks a valid topic
-while(topic3 != "Tv" && topic3 != "Geography" && topic3 != "History" && topic3 != "Music"){
-    topic3 = prompt.question(name1 + " please choose a valid topic: ");
-}
-
 // Making it impossible to pick hard as their topic
 while(topic3 == "Hard"){
     topic3 = prompt.question("That topic is only for the end! Please choose another: ");
+}
+
+// If Player 2 enters a topic that isnt valid then it will loop until the user picks a valid topic
+while(topic3 != "Tv" && topic3 != "Geography" && topic3 != "History" && topic3 != "Music"){
+    topic3 = prompt.question(name1 + " please choose a valid topic: ");
 }
 
 // Making the user pick another topic if they pick a topic they have already done
@@ -413,14 +427,14 @@ for (let i =0; i<3; i++){
 // Asking Player 2 for their second topic
 let topic4 = prompt.question(name2 + " please choose another topic: ");
 
-// If Player 2 enters a topic that isnt valid then it will loop until the user picks a valid topic
-while(topic4 != "Tv" && topic4 != "Geography" && topic4 != "History" && topic4 != "Music"){
-    topic4 = prompt.question(name1 + " please choose a valid topic: ");
-}
-
 // Making it impossible to pick hard as their topic
 while(topic4 == "Hard"){
     topic4 = prompt.question("That topic is only for the end! Please choose another: ");
+}
+
+// If Player 2 enters a topic that isnt valid then it will loop until the user picks a valid topic
+while(topic4 != "Tv" && topic4 != "Geography" && topic4 != "History" && topic4 != "Music"){
+    topic4 = prompt.question(name1 + " please choose a valid topic: ");
 }
 
 // Making the user pick another topic if they pick a topic they have already done
@@ -476,7 +490,7 @@ for (let i =0; i<2; i++){
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
     // Remove the question so it can't be selected again
-    questions[topic].splice(randomIndex, 1);
+    questions[topic5].splice(randomIndex, 1);
 }
 
 
@@ -501,7 +515,7 @@ for (let i =0; i<2; i++){
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
     // Remove the question so it can't be selected again
-    questions[topic].splice(randomIndex, 1);
+    questions[topic5].splice(randomIndex, 1);
 }
 
 // End of the game
@@ -529,8 +543,7 @@ console.log("Thanks for playing!");
 // make it so the player cannot choose hard (DONE)
 // Make the user lose a point if they answer incorectly (DONE)
 // Make it so if the user enters an invalid topic it will ask them to enter a valid one (DONE)
-
-// Make it so questions can't repeat (DONE) <-- except the final 2 hard questions sometimes repeat for the player 1 and player 2
+// Make it so questions can't repeat (DONE)
 // maybe add a filter so if the player enters an answer or topic without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
 
 
@@ -539,7 +552,7 @@ console.log("Thanks for playing!");
 //  if(Number(topic) == 1){
 //      answer == questions[topic][1][0]
 //  }
-
+// maybe add another option called"number" in the object so if the user input = answer or userinput = number they get the point
 
 // so do this:
 // topics = [1(tv) , 2(Geography), 3(History), 4(Music)]
@@ -555,9 +568,6 @@ console.log("Thanks for playing!");
 
 
 
-
-
-
 // ----------------------
 //  When asking for a new topic, print the ones that can be done (maybe...)
 // make an array of topcis that are available
@@ -566,12 +576,3 @@ console.log("Thanks for playing!");
 
 
 
-
-// Make it so questions can't repeat 
-// make an array literally = the object questions
-// then when a topic is used, do "topic".remove(arrayname)
-
-// let questionAvailability = questions
-// if (topic == "Tv"){
-//     randomQuestion.question.remove(questionavAilability)
-// }
