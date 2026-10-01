@@ -459,7 +459,7 @@ for (let i =0; i<2; i++){
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
     console.log("4. " + randomQuestion.choices[3]);
-     var dateStart = new Date()
+     var dateStart = new Date() // timer function added
     var answer = prompt.question("Enter your answer: ");
     var difference = new Date() - dateStart; // time elapsed in milliseconds
 if (difference > 30000){
@@ -482,7 +482,7 @@ console.log(name2 + " Points: " + totalPoints2);
 if(totalPoints>totalPoints2){
     console.log(name1 + " is the winner")
 }else if(totalPoints == totalPoints2){
-    console.log("It's a draw!")
+    console.log("It's a draw!") //draw feature added
 }else{
     console.log(name2 + " is the winner")
 }
