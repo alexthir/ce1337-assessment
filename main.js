@@ -481,21 +481,25 @@ console.log(name2 + " Points: " + totalPoints2);
 
 if(totalPoints>totalPoints2){
     console.log(name1 + " is the winner")
+}else if(totalPoints == totalPoints2){
+    console.log("It's a draw!")
 }else{
     console.log(name2 + " is the winner")
 }
-
+ if(totalPoints == totalPoints2){
+    console.log("It's a draw!")
+    }
 console.log("Thanks for playing!");
 
 
 
 // =====additions/fixes=====
-// add more questions (there is still way more on WORD document)
+// add more questions (there is still way more on WORD document) DONE
 // when testing when it says"enter your answer" maybe make it with player 1/2aswell so it looks more unique (DONE)
 // add an outro with points and score(DONE)
-// add rules section
-// Make it so questions can't repeat
-// If the player gets the question wrong, print out the real answer so they learn
+// add rules section DONE
+// Make it so questions can't repeat 
+// If the player gets the question wrong, print out the real answer so they learn DONE
 //  When asking for a new topic, print the ones that can be done (because the player can forget which topics are left)
-//  If the user enters a topic that isnt in the OBJECT then just print"invalid topic, pelase try again" <---- (!=)
-// maybe add a filter so if the player enters a topic without a capital letter it will still work
+//  If the user enters a topic that isnt in the OBJECT then just print"invalid topic, pelase try again" <---- (!=) DONE
+// maybe add a filter so if the player enters a topic without a capital letter it will still work DONE
