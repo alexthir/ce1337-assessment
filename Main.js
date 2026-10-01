@@ -330,6 +330,21 @@ for (let i =0; i<3; i++){
 // Asking Player 1 for their second topic
 let topic2 = prompt.question(name1 + " please choose a different topic: ");
 
+// ------------------------------// ------------------------------// ------------------------------// ------------------------------// ------------------------------
+// Showing the user what topics can be used
+// questionAvailability = ["Tv", "Geography", "History", "Music"];
+
+// for(i=0;i<questionAvailability.length; i++){
+//     if (topic == questionAvailability[i]){
+//         questionAvailability = questionAvailability.splice(topic)[i];
+//     }
+// }
+// let availabilitySentence = questionAvailability.split(",");
+// console.log("The topics that are available are: " + availabilitySentence )
+
+// use the questionAvailability array then splice it, then concatenate it with the index of the array: so for thye first word it would be [0] then [1] etc..
+// ------------------------------// ------------------------------// ------------------------------// ------------------------------// ------------------------------
+
 // Making it impossible to pick hard as their topic
 while(topic2 == "Hard"){
     topic2 = prompt.question("That topic is only for the end! Please choose another: ");
@@ -339,21 +354,6 @@ while(topic2 == "Hard"){
 while(topic2 != "Tv" && topic2 != "Geography" && topic2 != "History" && topic2 != "Music"){
     topic2 = prompt.question(name1 + " please choose a valid topic: ");
 }
-
-// Showing the user what topics can be used
-questionAvailability = ["Tv", "Geography", "History", "Music"];
-
-// for(i=0;i<questionAvailability.length; 1++){
-//     if (topic == questionAvailability[i]){
-//         questionAvailability.splice(topic);
-//     }
-// }
-
-// let questionAvailability.splice(",") = availabilitySentence;
-// console.log("The topics that are available are: " + )
-
-// use the questionAvailability array then splice it, then concatenate it with the index of the array: so for thye first word it would be [0] then [1] etc..
-
 
 // Making the user pick another topic if they pick a topic they have already done
 while(topic2 == topic){ 
@@ -378,7 +378,7 @@ for (let i =0; i<3; i++){
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
     // Remove the question so it can't be selected again
-    questions[topic].splice(randomIndex, 1);
+    questions[topic2].splice(randomIndex, 1);
 }
 
 // ------------------------------
@@ -420,7 +420,7 @@ for (let i =0; i<3; i++){
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
     // Remove the question so it can't be selected again
-    questions[topic].splice(randomIndex, 1);
+    questions[topic3].splice(randomIndex, 1);
 }
 
 // ------------------------------
@@ -460,7 +460,7 @@ for (let i =0; i<3; i++){
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
     // Remove the question so it can't be selected again
-    questions[topic].splice(randomIndex, 1);
+    questions[topic4].splice(randomIndex, 1);
 }
 
 
@@ -544,6 +544,7 @@ console.log("Thanks for playing!");
 // Make the user lose a point if they answer incorectly (DONE)
 // Make it so if the user enters an invalid topic it will ask them to enter a valid one (DONE)
 // Make it so questions can't repeat (DONE)
+// When asking for a new topic, print the ones that can be done (NEARLY DONE)
 // maybe add a filter so if the player enters an answer or topic without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
 
 
@@ -565,13 +566,6 @@ console.log("Thanks for playing!");
 // }else{
 //     (userInput = 2)
 // } 
-
-
-
-// ----------------------
-//  When asking for a new topic, print the ones that can be done (maybe...)
-// make an array of topcis that are available
-// so if topic(variable) = "tv" then questions.remove(topic)
 
 
 
