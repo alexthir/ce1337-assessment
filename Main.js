@@ -293,6 +293,17 @@ while(rules != "yes" || rules !="Yes" || rules !="YES" || rules !="no" || rules 
 console.log("=====================================================")
 console.log("You can choose one of these topics: -Tv -Geography -History -Music ");
 
+// If the user enters a topic that isnt in the OBJECT then just print "invalid topic, "please try again" <---- (!=)
+// while(topic != "Tv" || topic != "Geography" || topic != "History" || topic != "Music"){
+//     topic = prompt.question("Please choose a valid topic: ");
+//     break;
+// }
+// maybe store all the already used topics into an Array, then when wanting to show what topics can be used, just do if input != questions[0] || input!= questions[1]......
+
+
+
+
+
 // Asking Player 1 for their first topic
 let topic = prompt.question(name1 + " please choose a topic: ");
 
@@ -493,11 +504,7 @@ console.log("Thanks for playing!");
 
 
 // Make it so questions can't repeat 
-// maybe add a filter so if the player enters a topic without a capital letter it will still work
-
-// ----------------------
-//  When asking for a new topic, print the ones that can be done (maybe...)
-// ----------------------
+// maybe add a filter so if the player enters a topic without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
 
 
 // MORE FIXES:
@@ -520,10 +527,11 @@ console.log("Thanks for playing!");
 // } 
 
 
+
+
+
+
 // ----------------------
-// //  If the user enters a topic that isnt in the OBJECT then just print "invalid topic, "please try again" <---- (!=)
-// while(topic != "Tv" || topic != "Geography" || topic != "History" || topic != "Music"){
-//     topic = prompt.question("Please choose a valid topic: ");
-//     break;
-// }
-// maybe store all the already used topics into an Array, then when wanting to show what topics can be used, just ...
+//  When asking for a new topic, print the ones that can be done (maybe...)
+// make an array of topcis that are available
+// so if topic(variable) = "tv" then questions.remove(topic)
