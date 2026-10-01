@@ -280,7 +280,7 @@ while(rules != "yes" || rules !="Yes" || rules !="YES" || rules !="no" || rules 
     rules = prompt.question("Please enter Yes or No: ");
     if(rules == "yes" || rules =="Yes" || rules =="YES"){
         console.log("=====RULES=====");
-        console.log("1.For every correct answer your point score will increase by one, and hard questions give 2 points.\n2.If the answer is spelt or answered incorectly that player will lose the point.\n3.You have thirty seconds to give an answer.\n4.If the timer runs out before you have given a correct answer,then the point is lost.\n5.When a topic is picked it cannot be picked again, even for the other player.\n6.Whichever player has the most points at the end wins!");
+        console.log("1.For every correct answer your point score will increase by one, and hard questions give 2 points.\n2.You have thirty seconds to give an answer.\n3.If the timer runs out before you have given a correct answer,then the point is lost.\n4.When a topic is picked it cannot be picked again, even for the other player.\n6.Whichever player has the most points at the end wins!");
         console.log("=====================================================");
         break;
         }else if(rules == "no" || rules =="No" || rules =="NO"){
@@ -308,8 +308,9 @@ while(topic == "Hard"){
 
 // Asking Player 1 to answer random questions based on the topic they chose
 for (let i =0; i<3; i++){
-    let randomQuestion = questions[topic][Math.floor(Math.random() * questions[topic].length)];
-    console.log(randomQuestion.question);
+    let randomIndex = Math.floor(Math.random() * questions[topic].length);
+    let randomQuestion = questions[topic][randomIndex];
+    console.log(name1 + " your question is: " + randomQuestion.question);
     console.log("1. " + randomQuestion.choices[0]);
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
@@ -321,8 +322,9 @@ for (let i =0; i<3; i++){
         totalPoints++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
-        totalPoints--;
     }
+    // Remove the question so it can't be selected again
+    questions[topic].splice(randomIndex, 1);
 }
 
 // Asking Player 1 for their second topic
@@ -346,8 +348,9 @@ while(topic2 == topic){
 
 // Asking Player 1 to answer random questions based on the second topic they chose
 for (let i =0; i<3; i++){
-    randomQuestion = questions[topic2][Math.floor(Math.random() * questions[topic2].length)];
-    console.log(randomQuestion.question);
+    let randomIndex = Math.floor(Math.random() * questions[topic2].length);
+    let randomQuestion = questions[topic2][randomIndex];
+    console.log(name1 + " your question is: " + randomQuestion.question);
     console.log("1. " + randomQuestion.choices[0]);
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
@@ -359,12 +362,15 @@ for (let i =0; i<3; i++){
         totalPoints++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
-        totalPoints--;
     }
+    // Remove the question so it can't be selected again
+    questions[topic].splice(randomIndex, 1);
 }
 
 // ------------------------------
 // Asking Player 2 for their first topic
+console.log("=====================================================")
+console.log(name2 + " It is your turn now!")
 let topic3 = prompt.question(name2 + " please choose a topic: ");
 
 // If Player 2 enters a topic that isnt valid then it will loop until the user picks a valid topic
@@ -384,8 +390,9 @@ while(topic3 == topic || topic3 == topic2){
 
 // Asking Player 2 to answer random questions based on the second topic they chose
 for (let i =0; i<3; i++){
-    randomQuestion = questions[topic3][Math.floor(Math.random() * questions[topic3].length)];
-    console.log(randomQuestion.question);
+    let randomIndex = Math.floor(Math.random() * questions[topic3].length);
+    let randomQuestion = questions[topic3][randomIndex];
+    console.log(name2 + " your question is: " + randomQuestion.question);
     console.log("1. " + randomQuestion.choices[0]);
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
@@ -397,8 +404,9 @@ for (let i =0; i<3; i++){
         totalPoints2++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
-        totalPoints2--;
     }
+    // Remove the question so it can't be selected again
+    questions[topic].splice(randomIndex, 1);
 }
 
 // ------------------------------
@@ -422,8 +430,9 @@ while(topic4 == topic || topic4 == topic2 || topic4 == topic3){
 
 // Asking Player 2 to answer random questions based on the second topic they chose
 for (let i =0; i<3; i++){
-    randomQuestion = questions[topic4][Math.floor(Math.random() * questions[topic4].length)];
-    console.log(randomQuestion.question);
+    let randomIndex = Math.floor(Math.random() * questions[topic4].length);
+    let randomQuestion = questions[topic4][randomIndex];
+    console.log(name2 + " your question is: " + randomQuestion.question);
     console.log("1. " + randomQuestion.choices[0]);
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
@@ -435,12 +444,15 @@ for (let i =0; i<3; i++){
         totalPoints2++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
-        totalPoints2--;
     }
+    // Remove the question so it can't be selected again
+    questions[topic].splice(randomIndex, 1);
 }
+
 
 // ------------------------------
 // Introducing the hard questions
+console.log("=====================================================")
 console.log("It is time for the hard questions. \n ")
 console.log("Player 1, these are your two HARD questions: ")
 
@@ -448,8 +460,9 @@ let topic5 = "Hard";
 
 // Player 1 hard questions
 for (let i =0; i<2; i++){
-    randomQuestion = questions[topic5][Math.floor(Math.random() * questions[topic5].length)];
-    console.log(randomQuestion.question);
+    let randomIndex = Math.floor(Math.random() * questions[topic5].length);
+    let randomQuestion = questions[topic5][randomIndex];
+    console.log(name1 + " your question is: " + randomQuestion.question);
     console.log("1. " + randomQuestion.choices[0]);
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
@@ -458,19 +471,23 @@ for (let i =0; i<2; i++){
 
     if (answer == randomQuestion.answer){
         console.log("Correct!");
-        totalPoints = totalPoints + 2;
+        totalPoints++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
-        totalPoints--;
     }
+    // Remove the question so it can't be selected again
+    questions[topic].splice(randomIndex, 1);
 }
+
 
 // ------------------------------
 // Player 2 hard questions
+console.log("=====================================================")
 console.log("Player 2, these are your two HARD questions: ")
 for (let i =0; i<2; i++){
-    randomQuestion = questions[topic5][Math.floor(Math.random() * questions[topic5].length)];
-    console.log(randomQuestion.question);
+    let randomIndex = Math.floor(Math.random() * questions[topic5].length);
+    let randomQuestion = questions[topic5][randomIndex];
+    console.log(name2 + " your question is: " + randomQuestion.question);
     console.log("1. " + randomQuestion.choices[0]);
     console.log("2. " + randomQuestion.choices[1]);
     console.log("3. " + randomQuestion.choices[2]);
@@ -479,11 +496,12 @@ for (let i =0; i<2; i++){
 
     if (answer == randomQuestion.answer){
         console.log("Correct!");
-        totalPoints2 = totalPoints2 + 2;
+        totalPoints2++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
-        totalPoints2--;
     }
+    // Remove the question so it can't be selected again
+    questions[topic].splice(randomIndex, 1);
 }
 
 // End of the game
@@ -512,8 +530,8 @@ console.log("Thanks for playing!");
 // Make the user lose a point if they answer incorectly (DONE)
 // Make it so if the user enters an invalid topic it will ask them to enter a valid one (DONE)
 
-// Make it so questions can't repeat 
-// maybe add a filter so if the player enters an answer without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
+// Make it so questions can't repeat (DONE) <-- except the final 2 hard questions sometimes repeat for the player 1 and player 2
+// maybe add a filter so if the player enters an answer or topic without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
 
 
 // MORE FIXES:
@@ -544,3 +562,16 @@ console.log("Thanks for playing!");
 //  When asking for a new topic, print the ones that can be done (maybe...)
 // make an array of topcis that are available
 // so if topic(variable) = "tv" then questions.remove(topic)
+
+
+
+
+
+// Make it so questions can't repeat 
+// make an array literally = the object questions
+// then when a topic is used, do "topic".remove(arrayname)
+
+// let questionAvailability = questions
+// if (topic == "Tv"){
+//     randomQuestion.question.remove(questionavAilability)
+// }
