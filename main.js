@@ -319,9 +319,7 @@ for (let i =0; i<3; i++){
     var difference = new Date() - dateStart; // time elapsed in milliseconds
 if (difference > 30000){
     console.log("You didn't answer in time!")
-}
-
-    if (answer == randomQuestion.answer && difference < 30000){
+} else if (answer == randomQuestion.answer && difference < 30000){
         console.log("Correct!");
         totalPoints++;
     } else {
@@ -387,11 +385,12 @@ if (difference > 30000){
     } else {
         console.log("Incorrect!");
     }
-}
-
     // Remove the question so it can't be selected again
     questions[topic2].splice(randomIndex, 1);
 }
+
+
+
 
 // ------------------------------
 // Asking Player 2 for their first topic
