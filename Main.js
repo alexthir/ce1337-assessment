@@ -293,19 +293,13 @@ while(rules != "yes" || rules !="Yes" || rules !="YES" || rules !="no" || rules 
 console.log("=====================================================")
 console.log("You can choose one of these topics: -Tv -Geography -History -Music ");
 
-// If the user enters a topic that isnt in the OBJECT then just print "invalid topic, "please try again" <---- (!=)
-// while(topic != "Tv" || topic != "Geography" || topic != "History" || topic != "Music"){
-//     topic = prompt.question("Please choose a valid topic: ");
-//     break;
-// }
-// maybe store all the already used topics into an Array, then when wanting to show what topics can be used, just do if input != questions[0] || input!= questions[1]......
-
-
-
-
-
 // Asking Player 1 for their first topic
 let topic = prompt.question(name1 + " please choose a topic: ");
+
+// If Player 1 enters a topic that isnt valid then it will loop until the user picks a valid topic
+while(topic != "Tv" && topic != "Geography" && topic != "History" && topic != "Music"){
+    topic = prompt.question(name1 + " please choose a valid topic: ");
+}
 
 // Making it impossible to pick hard as their topic
 while(topic == "Hard"){
@@ -333,6 +327,11 @@ for (let i =0; i<3; i++){
 
 // Asking Player 1 for their second topic
 let topic2 = prompt.question(name1 + " please choose a different topic: ");
+
+// If Player 1 enters a topic that isnt valid then it will loop until the user picks a valid topic
+while(topic2 != "Tv" && topic2 != "Geography" && topic2 != "History" && topic2 != "Music"){
+    topic2 = prompt.question(name1 + " please choose a valid topic: ");
+}
 
 // Making it impossible to pick hard as their topic
 while(topic2 == "Hard"){
@@ -368,6 +367,11 @@ for (let i =0; i<3; i++){
 // Asking Player 2 for their first topic
 let topic3 = prompt.question(name2 + " please choose a topic: ");
 
+// If Player 2 enters a topic that isnt valid then it will loop until the user picks a valid topic
+while(topic3 != "Tv" && topic3 != "Geography" && topic3 != "History" && topic3 != "Music"){
+    topic3 = prompt.question(name1 + " please choose a valid topic: ");
+}
+
 // Making it impossible to pick hard as their topic
 while(topic3 == "Hard"){
     topic3 = prompt.question("That topic is only for the end! Please choose another: ");
@@ -400,6 +404,11 @@ for (let i =0; i<3; i++){
 // ------------------------------
 // Asking Player 2 for their second topic
 let topic4 = prompt.question(name2 + " please choose another topic: ");
+
+// If Player 2 enters a topic that isnt valid then it will loop until the user picks a valid topic
+while(topic4 != "Tv" && topic4 != "Geography" && topic4 != "History" && topic4 != "Music"){
+    topic4 = prompt.question(name1 + " please choose a valid topic: ");
+}
 
 // Making it impossible to pick hard as their topic
 while(topic4 == "Hard"){
@@ -501,10 +510,10 @@ console.log("Thanks for playing!");
 // Fix the rules (while and if statements) (DONE)
 // make it so the player cannot choose hard (DONE)
 // Make the user lose a point if they answer incorectly (DONE)
-
+// Make it so if the user enters an invalid topic it will ask them to enter a valid one (DONE)
 
 // Make it so questions can't repeat 
-// maybe add a filter so if the player enters a topic without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
+// maybe add a filter so if the player enters an answer without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
 
 
 // MORE FIXES:
