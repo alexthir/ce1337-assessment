@@ -1,4 +1,5 @@
 const prompt = require("readline-sync");
+
 // Declaring points per player
 let totalPoints = 0;
 let totalPoints2 = 0;
@@ -9,258 +10,312 @@ const questions = {
         {
             question: "What is the name of the school in Harry Potter?",
             choices: ["Durmstrang","Hogwarts", "Ministry of Magic", "Mordor"],
-            answer: "Hogwarts"
+            answer: "Hogwarts",
+            number: 2
         },
         {
             question: "What tv series features Walter White and Jesse Pinkman?",
             choices: ["The Walking Dead", "Attack on Titan", "Breaking Bad", "Modern family"],
-            answer: "Breaking Bad"
+            answer: "Breaking Bad",
+            number: 3
         },
         {
             question: "What franchise has the main character who has the powers of a spider?",
             choices: ["Spider-Man", "Ant-Man", "John Wick", "Batman"],
-            answer: "Spider-Man"
+            answer: "Spider-Man",
+            number: 1
         },
         {
             question: "what year is the movie blade runner 1982 set in?",
             choices: ["1982", "2019", "2028", "2077"],
-            answer: "2019"
+            answer: "2019",
+            number: 2
         },
         {
             question: "Which studio Ghibli features a girl named Chihiro working in a bath house for spirits?",
-            choices: ["washing spirits", "spirited away", "cleaning spirits", "ghost house"],
-            answer: "spirited away"
+            choices: ["Washing Spirits", "Spirited Away", "Cleaning Spirits", "Ghost House"],
+            answer: "Spirited Away",
+            number: 2
         },
         {
             question: "What score did Elle Woods get on her LSAT in Legally Blonde?",
             choices: ["179", "178", "172", "192"],
-            answer: "179"
+            answer: "179",
+            number: 1
         },
         {
             question: "Who directed the 2017 movie Get Out?",
             choices: ["Jordan Peele", "Christopher Nolan", "Steven Spielberg", "James Cameron"],
-            answer: "Jordan Peele"
+            answer: "Jordan Peele",
+            number: 1
         },
         {
             question: "Which movie does not feature Jonah Hill?",
             choices: ["Superbad", "Fight Club", "21 Jump Street", "The Wolf of Wall Street"],
-            answer: "Fight Club"
+            answer: "Fight Club",
+            number: 2
         },
         {
             question: "What is the name of Jessie's horse in Toy Story 2?",
             choices: ["Buckshot", "Slinky", "Woody", "Bullseye"],
-            answer: "Bullseye"
+            answer: "Bullseye",
+            number: 4
         }
     ],
+
     Geography:[
         {
             question: "What is the capital of Mongolia?",
             choices: ["Venice", "Ulaanbaatar", "Erdenet", "Paris"],
-            answer: "Ulaanbaatar"
+            answer: "Ulaanbaatar",
+            number: 2
         },
         {
             question: "How many continents are there?",
             choices: ["5", "6", "7", "8"],
-            answer: "7"
+            answer: "7",
+            number: 3
         },
         {
             question: "Which is the largest desert in the world?",
             choices: ["Sahara Desert", "Arabian Desert", "Gobi Desert", "Antarctic Desert"],
-            answer: "Antarctic Desert"
+            answer: "Antarctic Desert",
+            number: 4
         },
         {
             question: "What is the smallest country in the world?",
             choices: ["Scotland", "Wales", "Greenland", "Vatican City"],
-            answer: "Vatican City"
+            answer: "Vatican City",
+            number: 4
         },
         {
             question: "Which country has the highest population?",
             choices: ["China","India", "Pakistan", "Japan"],
-            answer: "India"
+            answer: "India",
+            number: 2
         },
         {
             question: "What is the longest river in the world?",
             choices: ["River Nile", "River Clyde", "River Amazon", "River Yenisei"],
-            answer: "River Nile"
+            answer: "River Nile",
+            number: 1
         },
         {
             question: "What is the capital of Canada?",
             choices: ["Ontario", "Vancouver","Ottawa", "Quebec"],
-            answer: "Ottawa"
+            answer: "Ottawa",
+            number: 3
         },
         {
             question: "What is the only country without any rivers?",
             choices: ["Saudi Arabia", "Dubai", "Ethiopia", "Nigeria"],
-            answer: "Saudi Arabia"
+            answer: "Saudi Arabia",
+            number: 1
         },
         {
             question: "Which country has more pyramids than Egypt?",
             choices: ["Morrocco", "Syria", "Libya", "Sudan"],
-            answer: "Sudan"
+            answer: "Sudan",
+            number: 4
         },
         {
             question: "What is the capital of Turkey?",
             choices: ["Ankara", "Istanbul", "Bursa", "Adana"],
-            answer: "Ankara"
+            answer: "Ankara",
+            number: 1
         },
         {
             question: "Which country has the largest coral reef system in the world?",
             choices: ["Madagascar", "New Zealand", "Australia", "USA"],
-            answer: "Australia"
+            answer: "Australia",
+            number: 3
         },
         {
             question: "Which country has the most time zones?",
             choices: ["Germany", "France", "United Kingdom", "Switzerland"],
-            answer: "France"
+            answer: "France",
+            number: 2
         },
         {
             question: "Which country is both an island and a continent?",
             choices: ["Africa", "America", "Europe", "Australia"],
-            answer: "Australia"
+            answer: "Australia",
+            number: 4
         }
     ],
+
     History:[
         {
             question: "who was the main power in the axis power during WW2?",
             choices: ["Japan", "Germany", "America", "Italy"],
-            answer: "Germany"
+            answer: "Germany",
+            number: 2
         },
         {
             question: "In what year did World War 2 end?",
             choices: ["1939", "1912", "1984", "1945"],
-            answer: "1945"
+            answer: "1945",
+            number: 4
         },
         {
             question: "What was the Bubonic Plague that swept through Europe in the 14th Century often called?",
             choices: ["Bubonic virus", "Bluetooth disease", "The Black Death", "Black Disease"],
-            answer: "The Black Death"
+            answer: "The Black Death",
+            number: 3
         },
         {
             question: "What year did the attack on Pearl Harbour occur?",
             choices: ["1941", "1945", "1921", "1939"],
-            answer: "1941"
+            answer: "1941",
+            number: 1
         },
         {
             question: "Who was the first person to walk on the moon?",
             choices: ["Buzz Aldrin", "John Glenn", "Alan Shepard", "Neil Armstrong"],
-            answer: "Neil Armstrong"
+            answer: "Neil Armstrong",
+            number: 4
         },
         {
             question: "Who was the first person in space?",
             choices: ["Yuri Gagarin", "Neil Armstrong", "Buzz Aldrin", "Sally Ride"],
-            answer: "Yuri Gagarin"
+            answer: "Yuri Gagarin",
+            number: 1
         },
         {
             question: "How many flights were hijacked during the September 11th attacks in 2001?",
             choices: ["4", "3", "2", "5"],
-            answer: "4"
+            answer: "4",
+            number: 1
         },
         {
             question: "Who was the artist famous for painting the Mona Lisa?",
             choices: ["Leonardo Dicaprio","Leonardo da Vinci", "Vincent Van Gogh", "Banksy"],
-            answer: "Leonardo da Vinci"
+            answer: "Leonardo da Vinci",
+            number: 2
         },
         {
             question: "What is the Greek God of the Sea?",
             choices: ["Zeus", "Aphrodite", "Thor", "Poseidon"],
-            answer: "Poseidon"
+            answer: "Poseidon",
+            number: 4
         }
     ],
+
     Music:[
         {
             question: "How many members were there in The Spice Girls?",
             choices: ["4", "3", "5", "6"],
-            answer: "5"
+            answer: "5",
+            number: 3
         },
         {
             question: "What is the highest selling album of all time?",
             choices: ["AM","Thriller", "The Fame", "Legacy"],
-            answer: "Thriller"
+            answer: "Thriller",
+            number: 2
         },
         {
             question: "Who sang Rolling in the Deep?",
             choices: ["Adele", "Beyonce", "Lady Gaga", "Rihanna"],
-            answer: "Adele"
+            answer: "Adele",
+            number: 1
         },
         {
             question: "What musical term means to gradually get louder?",
             choices: [ "Alto", "Crescendo", "Baritone", "Tenor"],
-            answer: "Crescendo"
+            answer: "Crescendo",
+            number: 2
         },
         {
             question: "What band performed Bohemian Rhapsody?",
             choices: ["Queen", "The Beatles", "ACDC", "Led Zepplin"],
-            answer: "Queen"
+            answer: "Queen",
+            number: 1
         },
         {
             question: "Which rapper's real name is Marshall Mathers?",
             choices: ["Tupac", "Biggie Smalls", "Dr Dre", "Eminem"],
-            answer: "Eminem"
+            answer: "Eminem",
+            number: 4
         },
         {
             question: "Which famous band featured WILL.I.AM?",
             choices: ["Oasis", "Daftpunk", "The Black Eyed Peas", "The Pussycat Dolls"],
-            answer: "The Black Eyed Peas"
+            answer: "The Black Eyed Peas",
+            number: 3
         },
         {
             question: "Which artist has won the most Grammy Awards of all time?",
             choices: ["Cheryl Cole", "Lady Gaga", "Mariah Carey", "Beyonce"],
-            answer: "Beyonce"
+            answer: "Beyonce",
+            number: 4
         },
         {
             question: "Which band sang Stayin' Alive in 1977?",
             choices: ["Bee gees", "Queen", "Led Zepplin", "Metallica"],
-            answer: "Bee gees"
+            answer: "Bee gees",
+            number: 1
         },
         {
             question: "Who sang Umbrella in 2007?",
             choices: ["Beyonce", "Rihanna", "Katy Perry", "Taylor Swift"],
-            answer: "Rihanna"
+            answer: "Rihanna",
+            number: 2
         },
         {
             question: "Which song spent the most weeks at number one in the 2010s?",
             choices: ["Shape of You", "We Found Love", "Old Town Road", "Uptown Funk"],
-            answer: "Old Town Road"
+            answer: "Old Town Road",
+            number: 3
         },
         {
             question: "What was Lady Gaga's debut single?",
             choices: ["Just Dance", "Telephone", "Umbrella", "Born This Way"],
-            answer: "Just Dance"
+            answer: "Just Dance",
+            number: 1
         },
         {
             question: "What spy movie did Elton john appear in?",
             choices: ["Golden Eye", "Johnny English", "Kingsmen", "James bond"],
-            answer: "Kingsmen"
+            answer: "Kingsmen",
+            number: 3
         },
         {
             question: "What part of the UK was the group Franz Ferdinand founded in?",
             choices: ["England", "Ireland", "Wales", "Scotland"],
-            answer: "Scotland"
+            answer: "Scotland",
+            number: 4
         }
     ],
+
     Hard:[
         {
             question: "What chess piece is the only one not to move in a straight line",
             choices: ["Queen", "Bishop", "Knight", "King"],
-            answer: "Knight"  
+            answer: "Knight",
+            number: 3
         },
         {
             question: "What is the strongest muscle in the human body",
             choices: ["Jaw", "Thigh", "Tongue", "Forearms"],
-            answer: "Jaw"
+            answer: "Jaw",
+            number: 1
         },
         {
             question: "Which language is the most natively spoken",
             choices: ["Indian", "Mandarin", "English", "Spanish"],
-            answer: "Mandarin"
+            answer: "Mandarin",
+            number: 2
         },
         {
             question: "What does ram mean in terms of computers",
             choices: ["Reboot Accessible Memory", "Random Access Memory", "Redo Applicable Memory", "Research Access Memory"],
-            answer: "Random Access Memory"
+            answer: "Random Access Memory",
+            number: 2
         }
     ]
 }
+
 
 // Gathering player names
 let name1 = prompt.question("Player 1 please enter your name: ")
@@ -287,13 +342,23 @@ while(rules != "yes" || rules !="Yes" || rules !="YES" || rules !="no" || rules 
             break;
     }
 }
-// ------------------------------
+
 // Starting the game
 console.log("=====================================================")
-console.log("You can choose one of these topics: -Tv -Geography -History -Music ");
+console.log("You can choose one of these topics: 1.Tv 2.Geography 3.History 4.Music ");
 
-// Asking Player 1 for their first topic
+// Asking Player 1 for their first topic + letting them choose with a number
 let topic = prompt.question(name1 + " please choose a topic: ");
+
+if (topic == "1"){
+    topic = "Tv";
+}else if(topic == "2"){
+    topic = "Geography";
+}else if(topic == "3"){
+    topic = "History";
+}else if(topic == "4"){
+    topic = "Music";
+}
 
 // Making it impossible to pick hard as their topic
 while(topic == "Hard"){
@@ -316,34 +381,41 @@ for (let i =0; i<3; i++){
     console.log("4. " + randomQuestion.choices[3]);
     let answer = prompt.question("Enter your answer: ");
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
-    // Remove the question so it can't be selected again
+    // Removing the question so it can't be selected again
     questions[topic].splice(randomIndex, 1);
 }
 
-// ------------------------------
-// Asking Player 1 for their second topic
+// Showing Player 1 what topics they can use for their second topic
+let questionAvailability = ["Tv", "Geography", "History", "Music"];
+
+for(i=0;i<questionAvailability.length; i++){
+    if (topic == questionAvailability[i]){
+        questionAvailability.splice(i, 1);
+    }
+}
+let availabilitySentence = questionAvailability.join(",");
+console.log("\nThe topics that are available are: " + availabilitySentence)
+
+
+// Asking Player 1 for their second topic + letting them choose with a number
 let topic2 = prompt.question(name1 + " please choose a different topic: ");
 
-// ------------------------------// ------------------------------// ------------------------------// ------------------------------// ------------------------------
-// Showing the user what topics can be used
-// questionAvailability = ["Tv", "Geography", "History", "Music"];
+if (topic2 == "1"){
+    topic2 = "Tv";
+}else if(topic2 == "2"){
+    topic2 = "Geography";
+}else if(topic2 == "3"){
+    topic2 = "History";
+}else if(topic2 == "4"){
+    topic2 = "Music";
+}
 
-// for(i=0;i<questionAvailability.length; i++){
-//     if (topic == questionAvailability[i]){
-//         questionAvailability = questionAvailability.splice(topic)[i];
-//     }
-// }
-// let availabilitySentence = questionAvailability.split(",");
-// console.log("The topics that are available are: " + availabilitySentence )
-
-// use the questionAvailability array then splice it, then concatenate it with the index of the array: so for thye first word it would be [0] then [1] etc..
-// ------------------------------// ------------------------------// ------------------------------// ------------------------------// ------------------------------
 
 // Making it impossible to pick hard as their topic
 while(topic2 == "Hard"){
@@ -371,21 +443,42 @@ for (let i =0; i<3; i++){
     console.log("4. " + randomQuestion.choices[3]);
     let answer = prompt.question("Enter your answer: ");
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
-    // Remove the question so it can't be selected again
+    // Removing the question so it can't be selected again
     questions[topic2].splice(randomIndex, 1);
 }
 
 // ------------------------------
-// Asking Player 2 for their first topic
+// Showing Player 2 what topics they can use for their first topic 
+for(i=0;i<questionAvailability.length; i++){
+    if (topic2 == questionAvailability[i]){
+        questionAvailability.splice(i, 1);
+    }
+}
+
+availabilitySentence = questionAvailability.join(",");
+console.log("\nThe topics that are available are: " + availabilitySentence)
+
+// Asking Player 2 for their first topic + letting them choose with a number
 console.log("=====================================================")
 console.log(name2 + " It is your turn now!")
 let topic3 = prompt.question(name2 + " please choose a topic: ");
+
+if (topic3 == "1"){
+    topic3 = "Tv";
+}else if(topic3 == "2"){
+    topic3 = "Geography";
+}else if(topic3 == "3"){
+    topic3 = "History";
+}else if(topic3 == "4"){
+    topic3 = "Music";
+}
+
 
 // Making it impossible to pick hard as their topic
 while(topic3 == "Hard"){
@@ -413,19 +506,38 @@ for (let i =0; i<3; i++){
     console.log("4. " + randomQuestion.choices[3]);
     let answer = prompt.question("Enter your answer: ");
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints2++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
-    // Remove the question so it can't be selected again
+    // Removing the question so it can't be selected again
     questions[topic3].splice(randomIndex, 1);
 }
 
-// ------------------------------
+// Showing Player 2 what topics they can use for their second topic
+for(i=0;i<questionAvailability.length; i++){
+    if (topic3 == questionAvailability[i]){
+        questionAvailability.splice(i, 1);
+    }
+}
+
+availabilitySentence = questionAvailability.join(",");
+console.log("\nThe topics that are available are: " + availabilitySentence)
+
 // Asking Player 2 for their second topic
 let topic4 = prompt.question(name2 + " please choose another topic: ");
+
+if (topic4 == "1"){
+    topic4 = "Tv";
+}else if(topic4 == "2"){
+    topic4 = "Geography";
+}else if(topic4 == "3"){
+    topic4 = "History";
+}else if(topic4 == "4"){
+    topic4 = "Music";
+}
 
 // Making it impossible to pick hard as their topic
 while(topic4 == "Hard"){
@@ -453,7 +565,7 @@ for (let i =0; i<3; i++){
     console.log("4. " + randomQuestion.choices[3]);
     let answer = prompt.question("Enter your answer: ");
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints2++;
     } else {
@@ -463,8 +575,6 @@ for (let i =0; i<3; i++){
     questions[topic4].splice(randomIndex, 1);
 }
 
-
-// ------------------------------
 // Introducing the hard questions
 console.log("=====================================================")
 console.log("It is time for the hard questions. \n ")
@@ -483,18 +593,16 @@ for (let i =0; i<2; i++){
     console.log("4. " + randomQuestion.choices[3]);
     let answer = prompt.question("Enter your answer: ");
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
-    // Remove the question so it can't be selected again
+    // Removing the question so it can't be selected again
     questions[topic5].splice(randomIndex, 1);
 }
 
-
-// ------------------------------
 // Player 2 hard questions
 console.log("=====================================================")
 console.log("Player 2, these are your two HARD questions: ")
@@ -508,13 +616,13 @@ for (let i =0; i<2; i++){
     console.log("4. " + randomQuestion.choices[3]);
     let answer = prompt.question("Enter your answer: ");
 
-    if (answer == randomQuestion.answer){
+    if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints2++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
-    // Remove the question so it can't be selected again
+    // Removing the question so it can't be selected again
     questions[topic5].splice(randomIndex, 1);
 }
 
@@ -544,29 +652,9 @@ console.log("Thanks for playing!");
 // Make the user lose a point if they answer incorectly (DONE)
 // Make it so if the user enters an invalid topic it will ask them to enter a valid one (DONE)
 // Make it so questions can't repeat (DONE)
-// When asking for a new topic, print the ones that can be done (NEARLY DONE)
-// maybe add a filter so if the player enters an answer or topic without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
+// When asking for a new topic, print the ones that can be done (DONE)
+// Make it so the user can enter a number to answer the multiple choice questions (DONE)
+// Make it so the user can enter a number to choose a topic (DONE)
 
-
-// MORE FIXES:
-//  make it so the user can enter a number at it is the topic instead (ideas for the code below)
-//  if(Number(topic) == 1){
-//      answer == questions[topic][1][0]
-//  }
-// maybe add another option called"number" in the object so if the user input = answer or userinput = number they get the point
-
-// so do this:
-// topics = [1(tv) , 2(Geography), 3(History), 4(Music)]
-
-// let userInput = "what topic do you want"
-// userInput = Number(userInput)
-
-// if (userInput = 1){
-//     topics = topics[userInput]
-// }else{
-//     (userInput = 2)
-// } 
-
-
-
-
+//Add a filter so if the player enters an answer or topic without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
+// Add timer function and call it for questions (ALEX DONE IT)  <--- make sure to add to the main code
