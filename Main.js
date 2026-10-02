@@ -312,10 +312,51 @@ const questions = {
             choices: ["Reboot Accessible Memory", "Random Access Memory", "Redo Applicable Memory", "Research Access Memory"],
             answer: "Random Access Memory",
             number: 2
+        },
+        {
+            question: "What does SMS stand for in the context of cellular communications?",
+            choices: ["Short Message Service", "Service Messaging System", "System Messaging Service", "Short Messaging System"],
+            answer: "Short Message Service",
+            number: 1
+        },
+        {
+            question: "Deglutition is the scientific term for what common bodily function that humans do hundreds of times a day?",
+            choices: ["Blinking", "Breathing", "Thinking", "Swallowing"],
+            answer: "Swallowing",
+            number: 4
+        },
+        {
+            question: "Which two months of the year are named after mortal men?",
+            choices: ["July and june", "July and August", "March and april", "July and march"],
+            answer: "July and August",
+            number: 2
+        },
+        {
+            question: "Which planet is the hottest in the solar system?",
+            choices: ["Venus", "Sun", "Mercury", "Pluto"],
+            answer: "Venus",
+            number: 1
+        },
+        {
+            question: "How many eyes does a bee have?",
+            choices: ["Two", "Twelve", "Five", "six"],
+            answer: "Five",
+            number: 3
+        },
+        {
+            question: "What is the human body's largest organ?",
+            choices: ["Lung", "Brain", "liver", "Skin"],
+            answer: "Skin",
+            number: 4
+        },
+        {
+            question: "What does DNA stand for?",
+            choices: ["Ditrotoluene acid", "Deoxyribonucleic Acid", "Dichlorodiphenyltrichloroethane acid", "Dubnium acid"],
+            answer: "Deoxyribonucleic Acid",
+            number: 2
         }
     ]
 }
-
 
 // Gathering player names
 let name1 = prompt.question("Player 1 please enter your name: ")
