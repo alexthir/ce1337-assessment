@@ -536,7 +536,7 @@ while(topic3 == "Hard"){
 
 // If Player 2 enters a topic that isnt valid then it will loop until the user picks a valid topic
 while(topic3 != "Tv" && topic3 != "Geography" && topic3 != "History" && topic3 != "Music"){
-    topic3 = prompt.question(name1 + " please choose a valid topic: ");
+    topic3 = prompt.question(name2 + " please choose a valid topic: ");
 }
 
 // Making the user pick another topic if they pick a topic they have already done
@@ -599,7 +599,7 @@ while(topic4 == "Hard"){
 
 // If Player 2 enters a topic that isnt valid then it will loop until the user picks a valid topic
 while(topic4 != "Tv" && topic4 != "Geography" && topic4 != "History" && topic4 != "Music"){
-    topic4 = prompt.question(name1 + " please choose a valid topic: ");
+    topic4 = prompt.question(name2 + " please choose a valid topic: ");
 }
 
 // Making the user pick another topic if they pick a topic they have already done
@@ -657,6 +657,7 @@ if (difference > 30000){
 }else if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints++;
+        totalPoints++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
@@ -681,6 +682,7 @@ if (difference > 30000){
 
 }else if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
+        totalPoints2++;
         totalPoints2++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
@@ -707,3 +709,5 @@ if(totalPoints>totalPoints2){
 
 console.log("Thanks for playing!");
 
+// still requires crash fix for unknown input after topic validity check
+// still requires Daniel's lowercase check edit
