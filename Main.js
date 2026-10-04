@@ -495,6 +495,7 @@ for (let i =0; i<3; i++){
 }
 
 // ------------------------------
+console.log("=====================================================")
 // Showing Player 2 what topics they can use for their first topic 
 for(i=0;i<questionAvailability.length; i++){
     if (topic2 == questionAvailability[i]){
@@ -506,7 +507,6 @@ availabilitySentence = questionAvailability.join(",");
 console.log("\nThe topics that are available are: " + availabilitySentence)
 
 // Asking Player 2 for their first topic + letting them choose with a number
-console.log("=====================================================")
 console.log(name2 + " It is your turn now!")
 let topic3 = prompt.question(name2 + " please choose a topic: ");
 
@@ -617,7 +617,7 @@ for (let i =0; i<3; i++){
 }
 
 // Introducing the hard questions
-console.log("=====================================================")
+console.log("\n\n=====================================================")
 console.log("It is time for the hard questions. \n ")
 console.log("Player 1, these are your two HARD questions: ")
 
@@ -645,8 +645,7 @@ for (let i =0; i<2; i++){
 }
 
 // Player 2 hard questions
-console.log("=====================================================")
-console.log("Player 2, these are your two HARD questions: ")
+console.log("\nPlayer 2, these are your two HARD questions: ")
 for (let i =0; i<2; i++){
     let randomIndex = Math.floor(Math.random() * questions[topic5].length);
     let randomQuestion = questions[topic5][randomIndex];
@@ -673,29 +672,18 @@ console.log("Player 1 Points: " + totalPoints);
 console.log("Player 2 Points: " + totalPoints2);
 
 if(totalPoints>totalPoints2){
-    console.log("Player 1 is the winner")
-}else{
-    console.log("Player 2 is the winner")
+    console.log("Player 1 is the winner");
+}else if(totalPoints<totalPoints2){
+    console.log("Player 2 is the winner");
+}else if(totalPoints==totalPoints2){
+    console.log("It is a draw!!");
 }
+
+
+
 
 console.log("Thanks for playing!");
 
-
-
-// =====additions/fixes=====
-// add more questions (there is still way more on WORD document) (DONE)
-// when testing when it says"enter your answer" maybe make it with player 1/2aswell so it looks more unique (DONE)
-// add an outro with points and score(DONE)
-// add rules section (ALEX - DONE)
-// If the player gets the question wrong, print out the real answer so they learn (DONE)
-// Fix the rules (while and if statements) (DONE)
-// make it so the player cannot choose hard (DONE)
-// Make the user lose a point if they answer incorectly (DONE)
-// Make it so if the user enters an invalid topic it will ask them to enter a valid one (DONE)
-// Make it so questions can't repeat (DONE)
-// When asking for a new topic, print the ones that can be done (DONE)
-// Make it so the user can enter a number to answer the multiple choice questions (DONE)
-// Make it so the user can enter a number to choose a topic (DONE)
 
 //Add a filter so if the player enters an answer or topic without a capital letter it will still work (DANIEL DONE IT) <--- make sure to add to the main code
 // Add timer function and call it for questions (ALEX DONE IT)  <--- make sure to add to the main code
