@@ -561,7 +561,7 @@ if (difference > 30000){
 
 }else if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
-        totalPoints++;
+        totalPoints2++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
@@ -624,7 +624,7 @@ if (difference > 30000){
 
 }else if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
-        totalPoints++;
+        totalPoints2++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
@@ -662,7 +662,7 @@ if (difference > 30000){
     }
     // Removing the question so it can't be selected again
     questions[topic5].splice(randomIndex, 1);
-
+}
 // Player 2 hard questions
 console.log("\nPlayer 2, these are your two HARD questions: ")
 for (let i =0; i<2; i++){
@@ -681,7 +681,7 @@ if (difference > 30000){
 
 }else if (answer == randomQuestion.answer || answer == randomQuestion.number){
         console.log("Correct!");
-        totalPoints++;
+        totalPoints2++;
     } else {
         console.log("Incorrect! The answer was: " + randomQuestion.answer);
     }
@@ -707,6 +707,3 @@ if(totalPoints>totalPoints2){
 
 console.log("Thanks for playing!");
 
-
-//Add a filter so if the player enters an answer or topic without a capital letter it will still work (DANIEL DONE IT) 
-// Add timer function and call it for questions (ALEX DONE IT)  
