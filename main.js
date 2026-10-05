@@ -455,13 +455,13 @@ console.log("\nThe topics that are available are: " + availabilitySentence)
 // Asking Player 1 for their second topic + letting them choose with a number
 let topic2 = prompt.question(name1 + " please choose a different topic: ");
 
-if (topic2 == "1"){
+if (topic2 == "1" || topic2 == "tv" || topic2 == "TV"){
     topic2 = "Tv";
-}else if(topic2 == "2"){
+}else if(topic2 == "2" || topic2 == "geography"){
     topic2 = "Geography";
-}else if(topic2 == "3"){
+}else if(topic2 == "3" || topic2 == "history"){
     topic2 = "History";
-}else if(topic2 == "4"){
+}else if(topic2 == "4" || topic2 == "music"){
     topic2 = "Music";
 }
 
@@ -524,13 +524,13 @@ console.log("\nThe topics that are available are: " + availabilitySentence)
 console.log(name2 + " It is your turn now!")
 let topic3 = prompt.question(name2 + " please choose a topic: ");
 
-if (topic3 == "1"){
+if (topic3 == "1" || topic3 == "tv" || topic3 == "TV"){
     topic3 = "Tv";
-}else if(topic3 == "2"){
+}else if(topic3 == "2" || topic3 == "geography"){
     topic3 = "Geography";
-}else if(topic3 == "3"){
+}else if(topic3 == "3" || topic3 == "history"){
     topic3 = "History";
-}else if(topic3 == "4"){
+}else if(topic3 == "4" || topic3 == "music"){
     topic3 = "Music";
 }
 
@@ -590,13 +590,13 @@ console.log("\nThe topics that are available are: " + availabilitySentence)
 // Asking Player 2 for their second topic
 let topic4 = prompt.question(name2 + " please choose another topic: ");
 
-if (topic4 == "1"){
+if (topic4 == "1" || topic4 == "tv" || topic4 == "TV"){
     topic4 = "Tv";
-}else if(topic4 == "2"){
+}else if(topic4 == "2" || topic4 == "geography"){
     topic4 = "Geography";
-}else if(topic4 == "3"){
+}else if(topic4 == "3" || topic4 == "history"){
     topic4 = "History";
-}else if(topic4 == "4"){
+}else if(topic4 == "4" || topic4 == "music"){
     topic4 = "Music";
 }
 
