@@ -360,13 +360,15 @@ const questions = {
 
 // Gathering player names
 let name1 = prompt.question("Player 1 please enter your name: ")
-console.log("Welcome "+ name1 + ", You are Player 1.")
+console.log("\x1b[36mWelcome " + name1 + ", You are Player 1.\x1b[0m")
 let name2 = prompt.question("Player 2 please enter your name: ")
-console.log("Welcome "+ name2 + ", You are Player 2.")
+console.log("\x1b[95mWelcome " + name2 + ", You are Player 2.\x1b[0m")
 
 // Introducing players to the game and rules
-console.log("===== QUIZ ====")
-console.log("Welcome to the quiz Player 1 and Player 2")
+console.log("\x1b[32m" + " ".repeat(Math.max(0, Math.floor((process.stdout.columns - 14) / 2))) + "===============" + "\x1b[0m")
+console.log("\x1b[32m" + " ".repeat(Math.max(0, Math.floor((process.stdout.columns - 14) / 2))) + "===== QUIZ ====" + "\x1b[0m")
+console.log("\x1b[32m" + " ".repeat(Math.max(0, Math.floor((process.stdout.columns - 14) / 2))) + "===============" + "\x1b[0m")
+console.log("Welcome to the quiz " + name1 + " and " + name2 + "!")
 
 let rules 
 console.log("Would you like to be told the rules of the game?");
@@ -391,13 +393,13 @@ console.log("You can choose one of these topics: 1.Tv 2.Geography 3.History 4.Mu
 // Asking Player 1 for their first topic + letting them choose with a number
 let topic = prompt.question(name1 + " please choose a topic: ");
 
-if (topic == "1"){
+if (topic == "1" || topic == "tv" || topic == "TV"){
     topic = "Tv";
-}else if(topic == "2"){
+}else if(topic == "2" || topic == "geography"){
     topic = "Geography";
-}else if(topic == "3"){
+}else if(topic == "3" || topic == "history"){
     topic = "History";
-}else if(topic == "4"){
+}else if(topic == "4" || topic == "music"){
     topic = "Music";
 }
 
@@ -423,10 +425,12 @@ for (let i =0; i<3; i++){
       var dateStart = new Date()
     var answer = prompt.question("Enter your answer: ");
     var difference = new Date() - dateStart; // time elapsed in milliseconds
+     // Case-insensitive answer
+      answer = answer.trim();
 if (difference > 30000){
     console.log("You didn't answer in time! The answer was: " + randomQuestion.answer)
 
-}else if (answer == randomQuestion.answer || answer == randomQuestion.number){
+}else if (answer.toLowerCase() == randomQuestion.answer.toLowerCase() || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints++;
     } else {
@@ -489,10 +493,12 @@ for (let i =0; i<3; i++){
     var dateStart = new Date()
     var answer = prompt.question("Enter your answer: ");
     var difference = new Date() - dateStart; // time elapsed in milliseconds
+    // Case-insensitive answer
+      answer = answer.trim();
 if (difference > 30000){
     console.log("You didn't answer in time! The answer was: " + randomQuestion.answer)
 
-}else if (answer == randomQuestion.answer || answer == randomQuestion.number){
+}else if (answer.toLowerCase() == randomQuestion.answer.toLowerCase() || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints++;
     } else {
@@ -556,10 +562,12 @@ for (let i =0; i<3; i++){
     var dateStart = new Date()
     var answer = prompt.question("Enter your answer: ");
     var difference = new Date() - dateStart; // time elapsed in milliseconds
+    // Case-insensitive answer
+      answer = answer.trim();
 if (difference > 30000){
     console.log("You didn't answer in time! The answer was: " + randomQuestion.answer)
 
-}else if (answer == randomQuestion.answer || answer == randomQuestion.number){
+}else if (answer.toLowerCase() == randomQuestion.answer.toLowerCase() || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints2++;
     } else {
@@ -619,10 +627,12 @@ for (let i =0; i<3; i++){
 var dateStart = new Date()
     var answer = prompt.question("Enter your answer: ");
     var difference = new Date() - dateStart; // time elapsed in milliseconds
+    // Case-insensitive answer
+      answer = answer.trim();
 if (difference > 30000){
     console.log("You didn't answer in time! The answer was: " + randomQuestion.answer)
 
-}else if (answer == randomQuestion.answer || answer == randomQuestion.number){
+}else if (answer.toLowerCase() == randomQuestion.answer.toLowerCase() || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints2++;
     } else {
@@ -651,10 +661,12 @@ for (let i =0; i<2; i++){
    var dateStart = new Date()
     var answer = prompt.question("Enter your answer: ");
     var difference = new Date() - dateStart; // time elapsed in milliseconds
+    // Case-insensitive answer
+      answer = answer.trim();
 if (difference > 30000){
     console.log("You didn't answer in time! The answer was: " + randomQuestion.answer)
 
-}else if (answer == randomQuestion.answer || answer == randomQuestion.number){
+}else if (answer.toLowerCase() == randomQuestion.answer.toLowerCase() || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints++;
         totalPoints++;
@@ -677,10 +689,12 @@ for (let i =0; i<2; i++){
 var dateStart = new Date()
     var answer = prompt.question("Enter your answer: ");
     var difference = new Date() - dateStart; // time elapsed in milliseconds
+    // Case-insensitive answer
+      answer = answer.trim();
 if (difference > 30000){
     console.log("You didn't answer in time! The answer was: " + randomQuestion.answer)
 
-}else if (answer == randomQuestion.answer || answer == randomQuestion.number){
+}else if (answer.toLowerCase() == randomQuestion.answer.toLowerCase() || answer == randomQuestion.number){
         console.log("Correct!");
         totalPoints2++;
         totalPoints2++;
@@ -697,9 +711,9 @@ console.log("Player 1 Points: " + totalPoints);
 console.log("Player 2 Points: " + totalPoints2);
 
 if(totalPoints>totalPoints2){
-    console.log("Player 1 is the winner");
+    console.log(name1 +" is the winner");
 }else if(totalPoints<totalPoints2){
-    console.log("Player 2 is the winner");
+    console.log(name2 + " is the winner");
 }else if(totalPoints==totalPoints2){
     console.log("It is a draw!!");
 }
@@ -709,5 +723,3 @@ if(totalPoints>totalPoints2){
 
 console.log("Thanks for playing!");
 
-// still requires crash fix for unknown input after topic validity check
-// still requires Daniel's lowercase check edit
